@@ -13,7 +13,22 @@ export default function TeachersList({teachers}) {
     </>
 }
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+//     try {
+//         const resp = await fetch("http://34.126.65.139:8080/api/v1/teachers");
+//         if (!resp.ok) {
+//             throw new Error("fetch teachers failed")
+//         }
+//         const teachers = await resp.json();
+//         return {props: {teachers}}
+//     } catch (e) {
+//         console.log(e.message)
+//         return null;
+//     }
+//
+// }
+
+export async function getServerSideProps() {
     try {
         const resp = await fetch("http://34.126.65.139:8080/api/v1/teachers");
         if (!resp.ok) {
